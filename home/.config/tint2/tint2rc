@@ -1,0 +1,113 @@
+# Catppuccin Mocha - tint2 taskbar (click = minimize / restore, never closes)
+
+# --- backgrounds ---
+# 1: panel
+rounded = 14
+border_width = 2
+border_sides = TBLR
+border_content_tint_weight = 0
+background_content_tint_weight = 0
+background_color = #1e1e2e 95
+border_color = #313244 100
+background_color_hover = #1e1e2e 95
+border_color_hover = #313244 100
+background_color_pressed = #1e1e2e 95
+border_color_pressed = #313244 100
+
+# 2: task (normal / minimized)
+rounded = 10
+border_width = 0
+border_sides = TBLR
+border_content_tint_weight = 0
+background_content_tint_weight = 0
+background_color = #313244 70
+border_color = #313244 0
+background_color_hover = #45475a 100
+border_color_hover = #45475a 0
+background_color_pressed = #585b70 100
+border_color_pressed = #585b70 0
+
+# 3: task active
+rounded = 10
+border_width = 2
+border_sides = TBLR
+border_content_tint_weight = 0
+background_content_tint_weight = 0
+background_color = #45475a 100
+border_color = #89b4fa 100
+background_color_hover = #585b70 100
+border_color_hover = #89b4fa 100
+background_color_pressed = #585b70 100
+border_color_pressed = #89b4fa 100
+
+# 4: task minimized (dimmed)
+rounded = 10
+border_width = 0
+border_sides = TBLR
+border_content_tint_weight = 0
+background_content_tint_weight = 0
+background_color = #181825 80
+border_color = #181825 0
+background_color_hover = #313244 100
+border_color_hover = #313244 0
+background_color_pressed = #45475a 100
+border_color_pressed = #45475a 0
+
+# --- panel ---
+panel_items = TS
+panel_monitor = all
+panel_position = bottom center horizontal
+panel_size = 100% 40
+panel_margin = 12 8
+panel_padding = 8 5 8
+panel_background_id = 1
+panel_layer = top
+panel_dock = 0
+wm_menu = 1
+strut_policy = follow_size
+autohide = 0
+disable_transparency = 0
+
+# --- taskbar ---
+taskbar_mode = multi_desktop
+taskbar_padding = 0 0 6
+taskbar_background_id = 0
+taskbar_active_background_id = 0
+taskbar_name = 0
+urgent_nb_of_blink = 8
+
+# --- tasks ---
+task_text = 1
+task_icon = 1
+task_centered = 0
+task_maximum_size = 240 30
+task_padding = 10 4 8
+task_tooltip = 1
+task_thumbnail = 0
+task_font = JetBrainsMono Nerd Font Propo 10
+task_font_color = #cdd6f4 100
+task_active_font_color = #89b4fa 100
+task_iconified_font_color = #6c7086 100
+task_urgent_font_color = #f38ba8 100
+task_background_id = 2
+task_active_background_id = 3
+task_iconified_background_id = 4
+task_urgent_background_id = 3
+task_icon_asb = 100 0 0
+task_active_icon_asb = 100 0 0
+task_iconified_icon_asb = 60 0 0
+task_urgent_icon_asb = 100 0 0
+
+# --- mouse: left click minimizes / restores, nothing closes ---
+mouse_left = toggle_iconify
+mouse_middle = none
+mouse_right = none
+mouse_scroll_up = none
+mouse_scroll_down = none
+
+# --- system tray (nm-applet: Wi-Fi) ---
+systray_padding = 8 4 8
+systray_background_id = 0
+systray_sort = ascending
+systray_icon_size = 24
+systray_icon_asb = 100 0 0

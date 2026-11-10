@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openbox_menu xmlns="http://openbox.org/3.4/menu">
+
+<menu id="root-menu" label="MicroFW">
+  <item label="On-screen keyboard"><action name="Execute"><command>/home/microfw/.config/openbox/keyboard-toggle.sh</command></action></item>
+  <item label="Terminal">
+    <action name="Execute"><command>xterm</command></action>
+  </item>
+  <item label="Files">
+    <action name="Execute"><command>pcmanfm</command></action>
+  </item>
+  <separator />
+  <menu id="settings-menu" label="Settings">
+    <menu id="usb-mode-menu" label="USB mode">
+      <item label="USB device / charging">
+        <action name="Execute"><command>xterm -hold -e doas -n /usr/local/sbin/mfw-usb-mode device</command></action>
+      </item>
+      <item label="Test OTG host (10 seconds)">
+        <action name="Execute"><command>xterm -hold -e doas -n /usr/local/sbin/mfw-usb-mode test</command></action>
+      </item>
+      <item label="OTG host (5 minutes, unplug USB first)">
+        <action name="Execute"><command>xterm -hold -e doas -n /usr/local/sbin/mfw-usb-mode host</command></action>
+      </item>
+    </menu>
+
+
+    <item label="Window manager (theme, desktops)">
+      <action name="Execute"><command>obconf-qt</command></action>
+    </item>
+    <item label="Display (resolution, refresh rate)">
+      <action name="Execute"><command>arandr</command></action>
+    </item>
+    <item label="Sound">
+      <action name="Execute"><command>pavucontrol</command></action>
+    </item>
+    <item label="Network">
+      <action name="Execute"><command>nm-connection-editor</command></action>
+    </item>
+    <separator />
+    <item label="Reload Openbox config">
+      <action name="Reconfigure" />
+    </item>
+  </menu>
+  <separator />
+  <item label="Restart panels and compositor">
+    <action name="Execute"><command>/home/microfw/.config/openbox/restart-panels.sh</command></action>
+  </item>
+  <separator />
+  <item label="Log out">
+    <action name="Exit" />
+  </item>
+  <item label="Reboot">
+    <action name="Execute"><command>loginctl reboot</command></action>
+  </item>
+  <item label="Shut down">
+    <action name="Execute"><command>loginctl poweroff</command></action>
+  </item>
+</menu>
+
+</openbox_menu>

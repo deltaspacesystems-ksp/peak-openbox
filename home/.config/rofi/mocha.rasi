@@ -1,0 +1,31 @@
+* {
+    bg: #1e1e2e;
+    surface: #313244;
+    fg: #cdd6f4;
+    muted: #6c7086;
+    blue: #89b4fa;
+    mauve: #cba6f7;
+    font: "JetBrainsMono Nerd Font Propo 10";
+    background-color: transparent;
+    text-color: @fg;
+}
+window {
+    location: northeast;
+    anchor: northeast;
+    x-offset: -12px;
+    y-offset: 46px;
+    width: 380px;
+    background-color: @bg;
+    border: 2px;
+    border-color: @blue;
+    border-radius: 12px;
+}
+mainbox { padding: 10px; spacing: 8px; children: [inputbar, message, listview]; }
+inputbar { background-color: @surface; border-radius: 8px; padding: 8px 10px; spacing: 8px; children: [prompt, entry]; }
+prompt { text-color: @mauve; }
+entry { placeholder: "search"; placeholder-color: @muted; }
+message { padding: 6px 10px; background-color: @surface; border-radius: 8px; }
+listview { lines: 9; fixed-height: false; scrollbar: false; spacing: 4px; }
+element { padding: 8px 10px; border-radius: 8px; }
+element selected.normal { background-color: @surface; text-color: @blue; }
+element-text { background-color: transparent; text-color: inherit; }

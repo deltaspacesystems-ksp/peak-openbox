@@ -1,0 +1,7 @@
+# MicroFW - Catppuccin Mocha
+xrdb -merge ~/.Xresources
+feh --no-fehbg --bg-scale ~/Pictures/luca-micheli-wallpaper.jpg &
+dunst &
+(sleep 1; LC_TIME=pl_PL.UTF-8 polybar main >/tmp/polybar.log 2>&1) &
+tint2 &
+nm-applet &

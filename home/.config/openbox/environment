@@ -1,0 +1,11 @@
+# ciemny motyw wszedzie (GTK3/4, Qt)
+export GTK_THEME=Adwaita:dark
+export QT_QPA_PLATFORMTHEME=gtk3
+export QT_STYLE_OVERRIDE=Fusion
+# angielski UI, polskie daty - tylko jesli locale zostaly wygenerowane (locale.sh)
+_has() { locale -a 2>/dev/null | grep -qixF "$1"; }
+if _has en_US.utf8; then export LANG=en_US.UTF-8; else export LANG=C.UTF-8; fi
+if _has pl_PL.utf8; then export LC_TIME=pl_PL.UTF-8; fi
+export PATH="$HOME/.local/bin:$PATH"
+export XCURSOR_THEME=Adwaita
+export XCURSOR_SIZE=24

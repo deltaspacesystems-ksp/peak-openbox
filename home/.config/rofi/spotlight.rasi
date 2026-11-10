@@ -1,0 +1,17 @@
+/* spotlight: wyszukiwarka na srodku ekranu */
+@import "mocha.rasi"
+window {
+    location: center;
+    anchor: center;
+    x-offset: 0px;
+    y-offset: -120px;
+    width: 90%;
+    border-radius: 16px;
+}
+mainbox { padding: 14px; spacing: 12px; }
+inputbar { padding: 14px 16px; border-radius: 12px; }
+prompt { font: "JetBrainsMono Nerd Font Propo 14"; }
+entry { font: "JetBrainsMono Nerd Font Propo 14"; }
+listview { lines: 7; }
+element { spacing: 12px; padding: 10px 12px; }
+element-icon { size: 30px; }

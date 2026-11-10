@@ -1,0 +1,18 @@
+#!/bin/sh
+set -eu
+d=/run/mfw-openbox
+install -d -m 755 "$d"
+test ! -S /tmp/.X11-unix/X0
+umask 077
+cookie=$(mcookie)
+xauth -f "$d/auth" add :0 . "$cookie"
+chown microfw "$d/auth"
+Xorg :0 vt7 -noreset -keeptty -nolisten tcp -auth "$d/auth" -config /etc/X11/mfw-y5-landscape.conf -logfile "$d/Xorg.log" >"$d/server.log" 2>&1 </dev/tty7 &
+xp=$!
+trap 'kill "$xp" 2>/dev/null || true' EXIT
+for i in 1 2 3 4 5; do
+    [ -S /tmp/.X11-unix/X0 ] && break
+    kill -0 "$xp"
+    sleep 1
+done
+su - microfw -c 'export DISPLAY=:0 XAUTHORITY=/run/mfw-openbox/auth; exec dbus-run-session -- openbox-session' >"$d/session.log" 2>&1
